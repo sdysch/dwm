@@ -731,7 +731,9 @@ drawbar(Monitor *m)
 	if (m == selmon) { /* status is only drawn on selected monitor */
 		drw_setscheme(drw, scheme[SchemeNorm]);
 		tw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
-		drw_text(drw, m->ww - tw, 0, tw, bh, 0, stext, 0);
+		drw_rect(drw, x + boxw, 0, w - ( 2 * boxw + 1), boxw,
+		m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
+		urg & 1 << i);
 	}
 
 	for (c = m->clients; c; c = c->next) {
