@@ -119,11 +119,14 @@ static Key keys[] = {
 	// { MODKEY|ShiftMask,             XK_y,      incrovgaps,     {.i = +1 } },
 	// { MODKEY|ShiftMask,             XK_o,      incrovgaps,     {.i = -1 } },
 	
-	// program shortcuts
+	// launch programs
 	{ MODKEY,				XK_w,		spawn,		SHCMD("google-chrome") },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("firefox") },
 	{ MODKEY,				XK_s,		spawn,		SHCMD("skypeforlinux") },
 	{ MODKEY,				XK_u,		spawn,		SHCMD("~/.local/bin/bar_scripts/poweroptions") },
+
+	// lock screen
+	{ MODKEY,				XK_x,		spawn,		SHCMD("~/.local/bin/lock") },
 };
 
 /* button definitions */
