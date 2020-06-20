@@ -1,7 +1,10 @@
 /* See LICENSE file for copyright and license details. */
 
+// needed for XF86 keys
+#include <X11/XF86keysym.h>
+
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
@@ -140,14 +143,50 @@ static Key keys[] = {
 	// { MODKEY|ShiftMask,             XK_y,      incrovgaps,     {.i = +1 } },
 	// { MODKEY|ShiftMask,             XK_o,      incrovgaps,     {.i = -1 } },
 	
+
+	// volume keys
+	{ 0,	XF86XK_AudioMute,			spawn,		SHCMD("pactl set-sink-mute 0 toggle && pkill -RTMIN+2 dwmblocks") },
+	{ 0,	XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pactl set-sink-volume +5% && pkill -RTMIN+2 dwmblocks") },
+	{ 0,	XF86XK_AudioLowerVolume,	spawn,		SHCMD("pactl set-sink-volume -5% && pkill -RTMIN+2 dwmblocks") },
+
+	// caps and numlock
+	{ 0,	LockMask,			spawn,		SHCMD("pkill -SIGRTMIN+11 dwmblocks") },
+	{ 0,	Mod2Mask,			spawn,		SHCMD("pkill -SIGRTMIN+11 dwmblocks") },
+
+	// cmus
+	{ MODKEY,	XK_c,						spawn,		SHCMD("xfce4-terminal -e cmus") },
+	{ 0,		XF86XK_AudioPlay,			spawn,		SHCMD("cmus-remote -u && pkill -RTMIN+1 dwmblocks") },
+	{ 0,		XF86XK_AudioPause,			spawn,		SHCMD("cmus-remote -u && pkill -RTMIN+1 dwmblocks") },
+	{ MODKEY,	XK_p,						spawn,		SHCMD("cmus-remote -u && pkill -RTMIN+1 dwmblocks") },
+	{ 0,		XF86XK_AudioNext,			spawn,		SHCMD("cmus-remote -n && pkill -RTMIN+1 dwmblocks") },
+	{ 0,		XF86XK_AudioPrev,			spawn,		SHCMD("cmus-remote -r && pkill -RTMIN+1 dwmblocks") },
+
+	// screenshots
+	{ 0,				XK_Print,			spawn,			SHCMD("scrot && notify-send -u low -t 3000 'Screen shot taken'") },
+	{ ShiftMask,		XK_Print,			spawn,			SHCMD("scrot -s && notify-send -u low -t 3000 'Screen shot taken'") },
+	
 	// launch programs
 	{ MODKEY,				XK_w,		spawn,		SHCMD("google-chrome") },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("firefox") },
 	{ MODKEY,				XK_s,		spawn,		SHCMD("skypeforlinux") },
 	{ MODKEY,				XK_u,		spawn,		SHCMD("~/.local/bin/bar_scripts/poweroptions") },
 
+	// poweroptions
+	{ 0,					XF86XK_PowerOff, spawn,		SHCMD("~/.local/bin/bar_scripts/poweroptions")},
+	{ MODKEY|ShiftMask,		XK_u,			 spawn,		SHCMD("~/.local/bin/shutdown_script") },
+	{ MODKEY|ShiftMask,		XK_r,			 spawn,		SHCMD("~/.local/bin/reboot") },
+
 	// lock screen
 	{ MODKEY,				XK_x,		spawn,		SHCMD("~/.local/bin/lock") },
+
+	// choose password
+	{ MODKEY|ShiftMask,		XK_p,		spawn,		SHCMD("~/.local/bin/copy_password") },
+
+	// choose Danish characters
+	{ MODKEY,				XK_i,		spawn,		SHCMD("~/.local/bin/choose_danish_characters") },
+
+	// newsboat
+	{ MODKEY,				XK_n,		spawn,		SHCMD("xfce4-terminal -e newsboat") },
 };
 
 /* button definitions */
