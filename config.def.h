@@ -187,6 +187,9 @@ static Key keys[] = {
 
 	// newsboat
 	{ MODKEY,				XK_n,		spawn,		SHCMD("xfce4-terminal -e newsboat") },
+
+	// toggle sticky window
+	{ MODKEY|ShiftMask,		XK_s,		togglesticky,	{0} },
 };
 
 /* button definitions */
