@@ -35,9 +35,17 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class           instance    title       tags mask     isfloating   monitor */
+	{ "Firefox",        NULL,       NULL,       3,            0,           -1 },
+	{ "Google-chrome",  NULL,       NULL,       1,            0,           -1 },
+	{ "Skype",			NULL,       NULL,       1,            0,           0 },
+
+	// these are all floating by default
+	{ "Gimp",           NULL,       NULL,       0,            1,           -1 },
+	{ "ROOT",			NULL,       NULL,       0,            1,           -1 },
+	{ "XClock",			NULL,       NULL,       0,            1,           -1 },
+	{ "Ristretto",		NULL,       NULL,       0,            1,           -1 },
+	{ "Display",		NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -189,7 +197,8 @@ static Key keys[] = {
 	{ MODKEY,				XK_n,		spawn,		SHCMD("xfce4-terminal -e newsboat") },
 
 	// toggle sticky window
-	{ MODKEY|ShiftMask,		XK_s,		togglesticky,	{0} },
+	// won't really use this
+	//{ MODKEY|ShiftMask,		XK_s,		togglesticky,	{0} },
 };
 
 /* button definitions */
