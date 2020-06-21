@@ -13,7 +13,10 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10", "JoyPixels:pixelsize=10:antialias=true:autohint=true"  };
+static const char *fonts[]          = { "monospace:size=10",
+										"Noto Color Emoji:style=Regular:pixelsize=10:antialias=true:autohint=true",
+										//"JoyPixels:pixelsize=10:antialias=true:autohint=true",
+										"FontAwesome:size=8" };
 static const char dmenufont[]       = "monospace:size=10";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
@@ -25,7 +28,7 @@ static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
        [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
-};
+ };
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
@@ -49,7 +52,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static float mfact     = 0.5; /* factor of master area size [0.05..0.95] */
 static int nmaster     = 1;    /* number of clients in master area */
 static int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
@@ -94,11 +97,6 @@ ResourcePref resources[] = {
 		{ "resizehints",       	INTEGER, &resizehints },
 		{ "mfact",      	 	FLOAT,   &mfact },
 };
-
-
-/* commands spawned when clicking statusbar, the mouse button pressed is exported as BUTTON */
-static char *statuscmds[] = { "" };
-static char *statuscmd[] = { "/bin/sh", "-c", NULL, NULL };
 
 #include "movestack.c"
 static Key keys[] = {
@@ -215,9 +213,9 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button1,        spawn,          {.v = statuscmd } },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = statuscmd } },
-	{ ClkStatusText,        0,              Button3,        spawn,          {.v = statuscmd } },
+	{ ClkStatusText,        0,              Button1,        sigdwmblocks,   {.i = 1} },
+	{ ClkStatusText,        0,              Button2,        sigdwmblocks,   {.i = 2} },
+	{ ClkStatusText,        0,              Button3,        sigdwmblocks,   {.i = 3} },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
