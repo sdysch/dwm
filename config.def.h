@@ -15,22 +15,27 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 //NOTE - cannot use emoji fonts, these crash dwm?
-static const char *fonts[]          = { "JetBrains Mono:style=Regular:size=10",
+static const char *fonts[]          = { "monospace:size=10",
 										//"Twitter Color Emoji:style=Regular:pixelsize=10:antialias=true:autohint=true",
 										//"Noto Color Emoji:style=Regular:pixelsize=10:antialias=true:autohint=true",
 										//"JoyPixels:pixelsize=10:antialias=true:autohint=true",
 										"FontAwesome:size=10" };
-static const char dmenufont[]       = "JetBrains Mono:style=Regular:size=10";
-static char normbgcolor[]           = "#222222";
-static char normbordercolor[]       = "#444444";
-static char normfgcolor[]           = "#bbbbbb";
+static const char dmenufont[]       = "monospace:size=10";
+static char normbgcolor[]           = "#000000";
+static char normbordercolor[]       = "#D8DEE9";
+static char normfgcolor[]           = "#4C566A";
 static char selfgcolor[]            = "#eeeeee";
-static char selbordercolor[]        = "#005577";
-static char selbgcolor[]            = "#005577";
+static char selbordercolor[]        = "#88C0D0";
+static char selbgcolor[]            = "#8FBCBB";
 static char *colors[][3] = {
-       /*               fg           bg           border   */
-       [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+	/*						fg					bg					border   */
+	[SchemeNorm]      = { normfgcolor,			normbgcolor,		normbordercolor },
+	[SchemeSel]       = { selfgcolor,  			selbgcolor,  		selbordercolor  },
+	[SchemeStatus]    = { normfgcolor,   		"#EBCB8B",   		"#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
+	[SchemeTagsSel]   = { selfgcolor,   		"#c7c0b1",    		"#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
+	[SchemeTagsNorm]  = { normfgcolor,   		"#A3BE8C",   		"#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
+	[SchemeInfoSel]   = { selfgcolor,   		"#A3BE8C",    		"#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
+	[SchemeInfoNorm]  = { normfgcolor,   		"#B48EAD",   		"#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
  };
 
 /* tagging */
@@ -84,6 +89,7 @@ static const char *termcmd[]  = { "xfce4-terminal", NULL };
 
 /*
  * Xresources preferences to load at startup
+ * I don't use this yet
  */
 ResourcePref resources[] = {
 		{ "normbgcolor",        STRING,  &normbgcolor },
