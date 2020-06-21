@@ -27,7 +27,7 @@ static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
        [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
-};
+ };
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
@@ -51,7 +51,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static float mfact     = 0.5; /* factor of master area size [0.05..0.95] */
 static int nmaster     = 1;    /* number of clients in master area */
 static int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
@@ -78,6 +78,24 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "xfce4-terminal", NULL };
 
+/*
+ * Xresources preferences to load at startup
+ */
+ResourcePref resources[] = {
+		{ "normbgcolor",        STRING,  &normbgcolor },
+		{ "normbordercolor",    STRING,  &normbordercolor },
+		{ "normfgcolor",        STRING,  &normfgcolor },
+		{ "selbgcolor",         STRING,  &selbgcolor },
+		{ "selbordercolor",     STRING,  &selbordercolor },
+		{ "selfgcolor",         STRING,  &selfgcolor },
+		{ "borderpx",          	INTEGER, &borderpx },
+		{ "snap",          		INTEGER, &snap },
+		{ "showbar",          	INTEGER, &showbar },
+		{ "topbar",          	INTEGER, &topbar },
+		{ "nmaster",          	INTEGER, &nmaster },
+		{ "resizehints",       	INTEGER, &resizehints },
+		{ "mfact",      	 	FLOAT,   &mfact },
+};
 
 #include "movestack.c"
 static Key keys[] = {
