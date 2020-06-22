@@ -177,8 +177,8 @@ static Key keys[] = {
 
 	// volume keys
 	{ 0,	XF86XK_AudioMute,			spawn,		SHCMD("pactl set-sink-mute 0 toggle && pkill -RTMIN+2 dwmblocks") },
-	{ 0,	XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pactl set-sink-volume +5% && pkill -RTMIN+2 dwmblocks") },
-	{ 0,	XF86XK_AudioLowerVolume,	spawn,		SHCMD("pactl set-sink-volume -5% && pkill -RTMIN+2 dwmblocks") },
+	{ 0,	XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pactl set-sink-volume 0 +5% && pkill -RTMIN+2 dwmblocks") },
+	{ 0,	XF86XK_AudioLowerVolume,	spawn,		SHCMD("pactl set-sink-volume 0 -5% && pkill -RTMIN+2 dwmblocks") },
 
 	// caps and numlock
 	{ 0,	LockMask,			spawn,		SHCMD("pkill -SIGRTMIN+11 dwmblocks") },
