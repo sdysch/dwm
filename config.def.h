@@ -209,6 +209,7 @@ static Key keys[] = {
 
 	// lock screen
 	{ MODKEY,				XK_x,		spawn,		SHCMD("~/.local/bin/lock") },
+	{ MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("slock") },
 
 	// choose password
 	{ MODKEY|ShiftMask,		XK_p,		spawn,		SHCMD("~/.local/bin/copy_password") },
