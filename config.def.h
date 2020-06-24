@@ -200,6 +200,8 @@ static Key keys[] = {
 	{ MODKEY,				XK_s,		spawn,		SHCMD("skypeforlinux") },
 	{ MODKEY,				XK_u,		spawn,		SHCMD("~/.local/bin/bar_scripts/poweroptions") },
 
+	{ MODKEY|ControlMask,	XK_w,		spawn,		SHCMD("xfce4-terminal -e nmtui") },
+
 	// poweroptions
 	{ 0,					XF86XK_PowerOff, spawn,		SHCMD("~/.local/bin/bar_scripts/poweroptions")},
 	{ MODKEY|ShiftMask,		XK_u,			 spawn,		SHCMD("~/.local/bin/shutdown_script") },
