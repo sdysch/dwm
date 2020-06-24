@@ -191,7 +191,8 @@ static Key keys[] = {
 	{ 0,		XF86XK_AudioPrev,			spawn,		SHCMD("cmus-remote -r && pkill -RTMIN+1 dwmblocks") },
 
 	// screenshots
-	{ 0,				XK_Print,			spawn,			SHCMD("scrot -s && notify-send -u low -t 3000 'Screen shot taken'") },
+	// credit: https://bbs.archlinux.org/viewtopic.php?id=86507
+	{ 0,				XK_Print,			spawn,			SHCMD("sleep 0.2; scrot -s && notify-send -u low -t 3000 'Screen shot taken'") },
 	//{ ShiftMask,		XK_Print,			spawn,			SHCMD("scrot -s && notify-send -u low -t 3000 'Screen shot taken'") },
 	
 	// launch programs
