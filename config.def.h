@@ -191,8 +191,8 @@ static Key keys[] = {
 	{ 0,		XF86XK_AudioPrev,			spawn,		SHCMD("cmus-remote -r && pkill -RTMIN+1 dwmblocks") },
 
 	// screenshots
-	{ 0,				XK_Print,			spawn,			SHCMD("scrot && notify-send -u low -t 3000 'Screen shot taken'") },
-	{ ShiftMask,		XK_Print,			spawn,			SHCMD("scrot -s && notify-send -u low -t 3000 'Screen shot taken'") },
+	{ 0,				XK_Print,			spawn,			SHCMD("scrot -s && notify-send -u low -t 3000 'Screen shot taken'") },
+	//{ ShiftMask,		XK_Print,			spawn,			SHCMD("scrot -s && notify-send -u low -t 3000 'Screen shot taken'") },
 	
 	// launch programs
 	{ MODKEY,				XK_w,		spawn,		SHCMD("google-chrome") },
