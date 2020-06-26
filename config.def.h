@@ -226,7 +226,7 @@ static Key keys[] = {
 	{ MODKEY,				XK_n,		spawn,		SHCMD("xfce4-terminal -e newsboat") },
 	
 	// taskwarrior
-	{ MODKEY|ControlMask,	XK_t,		spawn,		SHCMD("xfce4-terminal -e task --hold") },
+	{ MODKEY|ShiftMask,	    XK_t,		spawn,		SHCMD("xfce4-terminal -e task --hold") },
 
 	// toggle sticky window
 	// won't really use this
