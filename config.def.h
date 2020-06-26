@@ -35,8 +35,8 @@ static char *colors[][3] = {
 	[SchemeNorm]      = { normfgcolor,			normbgcolor,		normbordercolor },
 	[SchemeSel]       = { selfgcolor,  			selbgcolor,  		selbordercolor  },
 	[SchemeStatus]    = { selfgcolor,   		selbgcolor,   		"#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
-	[SchemeTagsSel]   = { selfgcolor,   		"#c7c0b1",    		"#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
-	[SchemeTagsNorm]  = { normfgcolor,   		"#ECEFF4",   		"#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
+	[SchemeTagsSel]   = { "#000000",   		    "#ECEFF4",    		"#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
+	[SchemeTagsNorm]  = { "#000000",   		    "#c7c0b1",   		"#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
 	[SchemeInfoSel]   = { selfgcolor,   		"#A3BE8C",    		"#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
 	[SchemeInfoNorm]  = { normfgcolor,   		normbgcolor,   		"#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
  };
@@ -224,6 +224,9 @@ static Key keys[] = {
 
 	// newsboat
 	{ MODKEY,				XK_n,		spawn,		SHCMD("xfce4-terminal -e newsboat") },
+	
+	// taskwarrior
+	{ MODKEY|ControlMask,	XK_t,		spawn,		SHCMD("xfce4-terminal -e task --hold") },
 
 	// toggle sticky window
 	// won't really use this
