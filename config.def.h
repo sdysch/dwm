@@ -228,6 +228,9 @@ static Key keys[] = {
 	// taskwarrior
 	{ MODKEY|ShiftMask,	    XK_t,		spawn,		SHCMD("xfce4-terminal -e task --hold") },
 
+	// thunar (file browser)
+	{ MODKEY|ShiftMask,	    XK_b,		spawn,		SHCMD("thunar") },
+
 	// toggle sticky window
 	// won't really use this
 	//{ MODKEY|ShiftMask,		XK_s,		togglesticky,	{0} },
