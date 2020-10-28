@@ -203,6 +203,7 @@ static Key keys[] = {
 	{ MODKEY,				XK_w,		spawn,		SHCMD("google-chrome") },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("firefox") },
 	{ MODKEY,				XK_s,		spawn,		SHCMD("skypeforlinux") },
+	{ MODKEY,				XK_z,		spawn,		SHCMD("zoom") },
 	{ MODKEY,				XK_u,		spawn,		SHCMD("~/.local/bin/bar_scripts/poweroptions") },
 
 	{ MODKEY|ControlMask,	XK_w,		spawn,		SHCMD("xfce4-terminal -e nmtui") },
