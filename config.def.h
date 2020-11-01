@@ -60,6 +60,7 @@ static const Rule rules[] = {
 	{ "XClock",			NULL,       NULL,       0,            1,           -1 },
 	{ "Ristretto",		NULL,       NULL,       0,            1,           -1 },
 	{ "Display",		NULL,       NULL,       0,            1,           -1 },
+	{ "zoom",		    NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
