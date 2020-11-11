@@ -157,7 +157,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	//{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ControlMask,             XK_q,      quit,           {0} },
 
 	//  vanity gaps, doubt I need these but leave them here for reference
 	// { MODKEY|Mod4Mask,              XK_h,      incrgaps,       {.i = +1 } },
