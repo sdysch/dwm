@@ -3,6 +3,9 @@
 // needed for XF86 keys
 #include <X11/XF86keysym.h>
 
+// common definitions
+#define TERMINAL "xfce4-terminal"
+
 /* appearance */
 static const unsigned int borderpx       = 3;        /* border pixel of windows */
 static const unsigned int snap           = 32;       /* snap pixel */
@@ -95,7 +98,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "xfce4-terminal", NULL };
+static const char *termcmd[]  = { TERMINAL, NULL };
 
 /*
  * Xresources preferences to load at startup
@@ -189,7 +192,7 @@ static Key keys[] = {
 	{ 0,	Mod2Mask,			spawn,		SHCMD("pkill -SIGRTMIN+11 dwmblocks") },
 
 	// cmus
-	{ MODKEY,	XK_c,						spawn,		SHCMD("xfce4-terminal -e cmus") },
+	//{ MODKEY,	XK_c,						spawn,		SHCMD(TERMINAL "-e cmus") },
 	{ 0,		XF86XK_AudioPlay,			spawn,		SHCMD("cmus-remote -u && pkill -RTMIN+1 dwmblocks") },
 	{ 0,		XF86XK_AudioPause,			spawn,		SHCMD("cmus-remote -u && pkill -RTMIN+1 dwmblocks") },
 	{ MODKEY,	XK_p,						spawn,		SHCMD("cmus-remote -u && pkill -RTMIN+1 dwmblocks") },
@@ -208,7 +211,7 @@ static Key keys[] = {
 	{ MODKEY,				XK_z,		spawn,		SHCMD("zoom") },
 	{ MODKEY,				XK_u,		spawn,		SHCMD("~/.local/bin/bar_scripts/poweroptions") },
 
-	{ MODKEY|ControlMask,	XK_w,		spawn,		SHCMD("xfce4-terminal -e nmtui") },
+	//{ MODKEY|ControlMask,	XK_w,		spawn,		SHCMD(TERMINAL "-e nmtui") },
 
 	// poweroptions
 	{ 0,					XF86XK_PowerOff, spawn,		SHCMD("~/.local/bin/bar_scripts/poweroptions")},
@@ -226,10 +229,10 @@ static Key keys[] = {
 	{ MODKEY,				XK_i,		spawn,		SHCMD("~/.local/bin/choose_danish_characters") },
 
 	// newsboat
-	{ MODKEY,				XK_n,		spawn,		SHCMD("xfce4-terminal -e newsboat") },
+	{ MODKEY,				XK_n,		spawn,		SHCMD(TERMINAL "-e newsboat") },
 	
 	// taskwarrior
-	{ MODKEY|ShiftMask,	    XK_t,		spawn,		SHCMD("xfce4-terminal -e task --hold") },
+	//{ MODKEY|ShiftMask,	    XK_t,		spawn,		SHCMD(TERMINAL "-e task --hold") },
 
 	// thunar (file browser)
 	{ MODKEY|ShiftMask,	    XK_b,		spawn,		SHCMD("thunar") },
