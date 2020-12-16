@@ -193,7 +193,7 @@ static Key keys[] = {
 	{ 0,	Mod2Mask,			spawn,		SHCMD("pkill -SIGRTMIN+11 dwmblocks") },
 
 	// cmus
-	//{ MODKEY,	XK_c,						spawn,		SHCMD(TERMINAL "-e cmus") },
+	//{ MODKEY,	XK_c,						spawn,		SHCMD(TERMINAL " -e cmus") },
 	{ 0,		XF86XK_AudioPlay,			spawn,		SHCMD("cmus-remote -u && pkill -RTMIN+1 dwmblocks") },
 	{ 0,		XF86XK_AudioPause,			spawn,		SHCMD("cmus-remote -u && pkill -RTMIN+1 dwmblocks") },
 	{ MODKEY,	XK_p,						spawn,		SHCMD("cmus-remote -u && pkill -RTMIN+1 dwmblocks") },
@@ -212,7 +212,7 @@ static Key keys[] = {
 	{ MODKEY,				XK_z,		spawn,		SHCMD("zoom") },
 	{ MODKEY,				XK_u,		spawn,		SHCMD("~/.local/bin/bar_scripts/poweroptions") },
 
-	//{ MODKEY|ControlMask,	XK_w,		spawn,		SHCMD(TERMINAL "-e nmtui") },
+	//{ MODKEY|ControlMask,	XK_w,		spawn,		SHCMD(TERMINAL " -e nmtui") },
 
 	// poweroptions
 	{ 0,					XF86XK_PowerOff, spawn,		SHCMD("~/.local/bin/bar_scripts/poweroptions")},
@@ -230,10 +230,10 @@ static Key keys[] = {
 	{ MODKEY,				XK_i,		spawn,		SHCMD("~/.local/bin/choose_danish_characters") },
 
 	// newsboat
-	{ MODKEY,				XK_n,		spawn,		SHCMD(TERMINAL "-e newsboat") },
+	{ MODKEY,				XK_n,		spawn,		SHCMD(TERMINAL " -e newsboat") },
 	
 	// taskwarrior
-	//{ MODKEY|ShiftMask,	    XK_t,		spawn,		SHCMD(TERMINAL "-e task --hold") },
+	//{ MODKEY|ShiftMask,	    XK_t,		spawn,		SHCMD(TERMINAL " -e task --hold") },
 
 	// thunar (file browser)
 	{ MODKEY|ShiftMask,	    XK_b,		spawn,		SHCMD("thunar") },
