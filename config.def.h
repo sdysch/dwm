@@ -4,7 +4,8 @@
 #include <X11/XF86keysym.h>
 
 // common definitions
-#define TERMINAL "xfce4-terminal"
+//#define TERMINAL "xfce4-terminal"
+#define TERMINAL "kitty"
 
 /* appearance */
 static const unsigned int borderpx       = 3;        /* border pixel of windows */
