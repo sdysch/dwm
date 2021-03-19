@@ -187,17 +187,15 @@ static Key keys[] = {
 	{ 0,	XF86XK_AudioMute,			spawn,		SHCMD("pactl set-sink-mute 0 toggle && pkill -RTMIN+2 dwmblocks") },
 	{ 0,	XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pactl set-sink-volume 0 +5% && pkill -RTMIN+2 dwmblocks") },
 	{ 0,	XF86XK_AudioLowerVolume,	spawn,		SHCMD("pactl set-sink-volume 0 -5% && pkill -RTMIN+2 dwmblocks") },
-
-	{ 0,	XF86XK_AudioMute,					spawn,		SHCMD("pactl set-sink-mute 0 toggle && pkill -RTMIN+2 dwmblocks") },
-	{ 0,	XF86XK_AudioRaiseVolume|ShiftMask,	spawn,		SHCMD("pactl set-sink-volume 0 +1% && pkill -RTMIN+2 dwmblocks") },
-	{ 0,	XF86XK_AudioLowerVolume|ShiftMask,	spawn,		SHCMD("pactl set-sink-volume 0 -1% && pkill -RTMIN+2 dwmblocks") },
+	//{ 0,	XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pactl set-sink-volume 0 +1% && pkill -RTMIN+2 dwmblocks") },
+	//{ 0,	XF86XK_AudioLowerVolume,	spawn,		SHCMD("pactl set-sink-volume 0 -1% && pkill -RTMIN+2 dwmblocks") },
 
 	// caps and numlock
 	{ 0,	LockMask,			spawn,		SHCMD("pkill -SIGRTMIN+11 dwmblocks") },
 	{ 0,	Mod2Mask,			spawn,		SHCMD("pkill -SIGRTMIN+11 dwmblocks") },
 
 	// cmus
-	//{ MODKEY,	XK_c,						spawn,		SHCMD(TERMINAL " -e cmus") },
+	{ MODKEY,	XK_c,						spawn,		SHCMD(TERMINAL " -e cmus") },
 	{ 0,		XF86XK_AudioPlay,			spawn,		SHCMD("cmus-remote -u && pkill -RTMIN+1 dwmblocks") },
 	{ 0,		XF86XK_AudioPause,			spawn,		SHCMD("cmus-remote -u && pkill -RTMIN+1 dwmblocks") },
 	{ MODKEY,	XK_p,						spawn,		SHCMD("cmus-remote -u && pkill -RTMIN+1 dwmblocks") },
