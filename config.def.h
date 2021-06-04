@@ -187,6 +187,12 @@ static Key keys[] = {
 	{ 0,	XF86XK_AudioMute,			spawn,		SHCMD("pactl set-sink-mute 0 toggle && pkill -RTMIN+2 dwmblocks") },
 	{ 0,	XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pactl set-sink-volume 0 +5% && pkill -RTMIN+2 dwmblocks") },
 	{ 0,	XF86XK_AudioLowerVolume,	spawn,		SHCMD("pactl set-sink-volume 0 -5% && pkill -RTMIN+2 dwmblocks") },
+
+	// for keyboards without media buttons
+	{ MODKEY,			XK_m,						spawn,		SHCMD("pactl set-sink-mute 0 toggle && pkill -RTMIN+2 dwmblocks") },
+	{ MODKEY,			XK_equal,					spawn,		SHCMD("pactl set-sink-volume 0 +5% && pkill -RTMIN+2 dwmblocks") },
+	{ MODKEY,			XK_minus,					spawn,		SHCMD("pactl set-sink-volume 0 -5% && pkill -RTMIN+2 dwmblocks") },
+
 	//{ 0,	XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pactl set-sink-volume 0 +1% && pkill -RTMIN+2 dwmblocks") },
 	//{ 0,	XF86XK_AudioLowerVolume,	spawn,		SHCMD("pactl set-sink-volume 0 -1% && pkill -RTMIN+2 dwmblocks") },
 
