@@ -240,6 +240,9 @@ static Key keys[] = {
 	// newsboat
 	{ MODKEY,				XK_n,		spawn,		SHCMD(TERMINAL " -e newsboat") },
 	
+	// vimwiki
+	{ MODKEY|ShiftMask,		XK_n,		spawn,		SHCMD(TERMINAL " -e $EDITOR $VIMWIKI/index.wiki") },
+	
 	// taskwarrior
 	//{ MODKEY|ShiftMask,	    XK_t,		spawn,		SHCMD(TERMINAL " -e task --hold") },
 
