@@ -22,11 +22,7 @@ static const int smartgaps               = 1;        /* 1 means no outer gap whe
 static const int showbar                 = 1;        /* 0 means no bar */
 static const int topbar                  = 1;        /* 0 means bottom bar */
 
-//NOTE - cannot use emoji fonts, these crash dwm?
-static const char *fonts[] = {
-								"UbuntuMono Nerd Font Mono:style=Regular:size=14",
-								"Ubuntu Mono:style=Regular:size=12",
-};
+static char *fonts[]          = { "monospace:size=10", "JoyPixels:pixelsize=10:antialias=true:autohint=true"  };
 static const char dmenufont[]       = "Ubuntu Mono:style=Regular:size=12";
 static char normbgcolor[]           = "#000000";
 static char normbordercolor[]       = "#D8DEE9";
