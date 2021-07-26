@@ -50,9 +50,6 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class           instance    title       tags mask     isfloating   monitor */
-	{ "Firefox",        NULL,       NULL,       1 << 2,            0,           -1 },
-	{ "Google-chrome",  NULL,       NULL,       1,            0,           -1 },
-	{ "Skype",			NULL,       NULL,       1,            0,           0 },
 
 	// these are all floating by default
 	{ "Gimp",           NULL,       NULL,       0,            1,           -1 },
