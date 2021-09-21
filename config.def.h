@@ -207,7 +207,7 @@ static Key keys[] = {
 	//{ ShiftMask,		XK_Print,			spawn,			SHCMD("scrot -s && notify-send -u low -t 3000 'Screen shot taken'") },
 	
 	// launch programs
-	{ MODKEY,				XK_w,		spawn,		SHCMD("google-chrome") },
+	{ MODKEY,				XK_w,		spawn,		SHCMD("google-chrome-stable") },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("firefox") },
 	{ MODKEY,				XK_s,		spawn,		SHCMD("skypeforlinux") },
 	{ MODKEY,				XK_z,		spawn,		SHCMD("zoom") },
