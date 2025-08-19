@@ -218,12 +218,12 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("firefox") },
 	{ MODKEY,				XK_s,		spawn,		SHCMD("skypeforlinux") },
 	{ MODKEY,				XK_z,		spawn,		SHCMD("zoom") },
-	{ MODKEY,				XK_u,		spawn,		SHCMD("~/.local/bin/bar_scripts/poweroptions") },
+	{ MODKEY,				XK_u,		spawn,		SHCMD("~/.local/bin/poweroptions") },
 
 	//{ MODKEY|ControlMask,	XK_w,		spawn,		SHCMD(TERMINAL " -e nmtui") },
 
 	// poweroptions
-	{ 0,					XF86XK_PowerOff, spawn,		SHCMD("~/.local/bin/bar_scripts/poweroptions")},
+	{ 0,					XF86XK_PowerOff, spawn,		SHCMD("~/.local/bin/poweroptions")},
 	{ MODKEY|ShiftMask,		XK_u,			 spawn,		SHCMD("~/.local/bin/shutdown_script") },
 	{ MODKEY|ShiftMask,		XK_r,			 spawn,		SHCMD("~/.local/bin/reboot") },
 
