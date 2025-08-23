@@ -24,10 +24,13 @@ static const int topbar                  = 1;        /* 0 means bottom bar */
 
 //NOTE - cannot use emoji fonts, these crash dwm?
 static const char *fonts[] = {
-								"UbuntuMono Nerd Font Mono:style=Regular:size=14",
-								"Ubuntu Mono:style=Regular:size=12",
+	// "UbuntuMono Nerd Font Mono:style=Regular:size=14",
+	// "Ubuntu Mono:style=Regular:size=12",
+	"xft:JetBrains Mono Medium:size=12",
+	"xft:JetBrains Mono Medium:size=10",
 };
-static const char dmenufont[]       = "Ubuntu Mono:style=Regular:size=12";
+static const char dmenufont[]       = "xft:JetBrains Mono Medium:size=12";
+// static const char dmenufont[]       = "Ubuntu Mono:style=Regular:size=12";
 static char normbgcolor[]           = "#000000";
 static char normbordercolor[]       = "#D8DEE9";
 static char normfgcolor[]           = "#4C566A";
@@ -214,7 +217,7 @@ static Key keys[] = {
 	//{ ShiftMask,		XK_Print,			spawn,			SHCMD("scrot -s && notify-send -u low -t 3000 'Screen shot taken'") },
 	
 	// launch programs
-	{ MODKEY,				XK_w,		spawn,		SHCMD("google-chrome") },
+	{ MODKEY,				XK_w,		spawn,		SHCMD("google-chrome-stable") },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("firefox") },
 	{ MODKEY,				XK_s,		spawn,		SHCMD("skypeforlinux") },
 	{ MODKEY,				XK_z,		spawn,		SHCMD("zoom") },
