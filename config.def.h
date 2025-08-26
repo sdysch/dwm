@@ -219,7 +219,7 @@ static Key keys[] = {
 	// launch programs
 	{ MODKEY,				XK_w,		spawn,		SHCMD("google-chrome-stable") },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("firefox") },
-	{ MODKEY,				XK_s,		spawn,		SHCMD("skypeforlinux") },
+	{ MODKEY,				XK_s,		spawn,		SHCMD("spotify") },
 	{ MODKEY,				XK_z,		spawn,		SHCMD("zoom") },
 	{ MODKEY,				XK_u,		spawn,		SHCMD("~/.local/bin/poweroptions") },
 
